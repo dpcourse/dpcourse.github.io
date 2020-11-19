@@ -16,7 +16,7 @@ body {
 	color: #f5f5f5;
 	font-size: 14pt;
 	font-weight: 700;
-	font-family: "Noto Serif", serif;
+	font-family: "PT Serif", serif;
 }
 
 .sidenav a {
@@ -57,7 +57,7 @@ body {
 }
 
 .main-title {
-	font-family: "Noto Serif", serif;
+	font-family: "PT Serif", serif;
 	font-size: 24pt;
 	font-weight: 700;
 	text-align: center;
