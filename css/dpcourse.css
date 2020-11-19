@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
   padding: 300px 24px;
 	color: #f5f5f5;
-	font-size: 13pt;
+	font-size: 14pt;
 	font-weight: 700;
 	font-family: "Noto Serif", serif;
 }
@@ -73,4 +73,40 @@ body {
 	font-size: 14pt;
 	font-weight: 300;
 	list-style-type: none;
+}
+
+.schedule {
+	
+}
+
+.schedule td {
+	padding: 8px 4px;
+	font-size: 14pt;
+	font-weight: 300;
+	border-collapse: collapse;
+	vertical-align: top;
+}
+
+.schedule th {
+	font-size: 16pt;
+	text-align: left;
+	padding: 0px 4px;
+	padding-bottom: 16px;
+	background: #f8f8f8;
+}
+
+.schedule tr:nth-child(even) {
+	background: #f8f8f8;
+}
+
+.schedule tr:nth-child(odd) {
+	background: #f0f0f0;
+}
+
+.schedule ul {
+	margin-top: 8px;
+}
+
+.schedule li {
+	
 }
