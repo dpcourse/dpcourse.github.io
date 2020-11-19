@@ -47,10 +47,30 @@ body {
   padding: 30px 40px;
 }
 
+.main a {
+  text-decoration: none;
+  color: #e50000;
+}
+
+.main a:hover {
+  color: #880000;
+}
+
 .main-title {
 	font-family: "Noto Serif", serif;
 	font-size: 24pt;
 	font-weight: 700;
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 50px;
+}
+
+.contact-table td {
+	font-size: 16pt;
+	font-weight: 700;
+}
+
+.contact-table ul {
+	font-size: 14pt;
+	font-weight: 300;
+	list-style-type: none;
 }
