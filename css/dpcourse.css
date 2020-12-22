@@ -5,7 +5,7 @@ body {
 
 .sidenav {
 	height: 100%;
-  width: 232px;
+  width: 216px;
   position: fixed;
   z-index: 1;
   top: 0px;
@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
   padding: 300px 24px;
 	color: #f5f5f5;
-	font-size: 14pt;
+	font-size: 13pt;
 	font-weight: 700;
 	font-family: "PT Serif", serif;
 }
@@ -31,7 +31,7 @@ body {
 
 .sidenav-title {
 	color: #f8f8f8;
-	font-size: 16pt;
+	font-size: 15pt;
 }
 
 @media screen and (max-height: 450px) {
@@ -40,9 +40,9 @@ body {
 }
 
 .main {
-  margin-left: 280px; /* Same width as the sidebar + left position in px */
+  margin-left: 264px; /* Same width as the sidebar + left position in px */
 	color: #000000;
-  font-size: 14pt;
+  font-size: 13pt;
 	font-weight: 300;
   padding: 30px 40px;
 }
@@ -61,16 +61,16 @@ body {
 	font-size: 24pt;
 	font-weight: 700;
 	text-align: center;
-	padding-bottom: 50px;
+	padding-bottom: 80px;
 }
 
 .contact-table td {
-	font-size: 16pt;
+	font-size: 15pt;
 	font-weight: 700;
 }
 
 .contact-table ul {
-	font-size: 14pt;
+	font-size: 13pt;
 	font-weight: 300;
 	list-style-type: none;
 }
@@ -81,25 +81,25 @@ body {
 
 .schedule td {
 	padding: 8px 4px;
-	font-size: 13pt;
+	font-size: 12pt;
 	font-weight: 300;
 	border-collapse: collapse;
 	vertical-align: top;
 }
 
 .schedule th {
-	font-size: 13pt;
+	font-size: 12t;
 	text-align: left;
 	padding: 0px 4px;
 	padding-bottom: 16px;
+	text-decoration: underline;
+}
+
+.schedule tr:nth-child(odd) {
 	background: #f8f8f8;
 }
 
 .schedule tr:nth-child(even) {
-	background: #f8f8f8;
-}
-
-.schedule tr:nth-child(odd) {
 	background: #f0f0f0;
 }
 
@@ -109,5 +109,14 @@ body {
 }
 
 .schedule li {
+	
+}
+
+.syllabus ul {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.syllabus li {
 	
 }
