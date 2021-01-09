@@ -88,7 +88,7 @@ body {
 }
 
 .schedule th {
-	font-size: 12t;
+	font-size: 12pt;
 	text-align: left;
 	padding: 0px 4px;
 	padding-bottom: 16px;
@@ -115,8 +115,4 @@ body {
 .syllabus ul {
 	margin-top: 8px;
 	margin-bottom: 8px;
-}
-
-.syllabus li {
-	
 }
