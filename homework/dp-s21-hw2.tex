@@ -1,0 +1,173 @@
+\documentclass[11pt]{article}
+
+% set this flag to 0 to remove comments
+\def\comments{1}
+
+% load the preamble
+\usepackage{../preamble}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%  Title  %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\HWtitle{2}{Friday, March 12, 2021}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%  Beginning  %%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+\textbf{Collaboration and Honesty Policy Reminder:}
+Collaboration in the form of discussion is allowed. However, all forms
+of cheating (copying parts of a classmate’s assignment, plagiarism
+from papers or old posted solutions) are NOT allowed. A rough rule of
+thumb: you should be able to walk away from a discussion of a homework
+problem with no notes at all and write your solution on your own.
+%
+Finding answers to problems on the
+Web or from other outside sources (these include anyone not enrolled
+in the class) is forbidden. 
+
+\begin{compactitem}
+\item {\em You must write up each problem solution by yourself without
+assistance, even if you collaborate with others to solve the
+problem.}
+
+\item You must identify your collaborators. If you did not
+work with anyone, you should write ``Collaborators: none."
+
+\item Asking and answering questions in every forum the class provides (on Piazza, in class, and in
+  office hours) is encouraged!
+
+\item Even though look up answers is forbidden, using the web to find
+  alternative explanations of concepts you need for the homework
+  \emph{is} allowed, and encouraged. For example, you can look up
+  background on probability and linear algebra, documentation for
+  particular programming languages, etc.
+    \end{compactitem}
+
+ \paragraph{Problems to be handed in}
+\begin{enumerate}[leftmargin=\parindent, itemsep=3ex]
+
+\item     {\bf Medians.}
+    Suppose we want to find the median of a list of real numbers
+      $\dataset = (\data_1,...,\data_n)$ that lie in the set $\set{1,...,R}$. 
+
+      Consider an instantiation of the exponential mechanism based on the
+      following score function: 
+      For every $y\in \set{1,...,R}$, let
+        $$q(y; \dataset) = - \left|\sum_{i=1}^n \textit{sign}(y - \data_i)\, \right|
+        \,$$
+        where $$\textit{sign}(z)=
+        \begin{cases}
+          1 & \text{if }z>0 \,,\\
+          0 &          \text{if }z=0 \,,\\
+          -1 & \text{if }z<0 \,.\\
+        \end{cases}$$
+        Note that this score is 0 exactly when $y$ is a valid median
+        for $\dataset$. 
+
+        \begin{enumerate}
+        \item Show that $q$ has sensitivity at most 1 when
+          neighboring data sets are allowed to differ by the insertion
+          or deletion of one entry.
+
+          \item Let $A_\eps$ be the algorithm one gets by instantiating the
+            exponential mechanism with score $q$, parameter $\eps$ and
+            output set $\mathcal{Y} = \set{1,...,R}$. Show that there is a constant $c>0$ such that:
+            for every data set $\bf x$, for
+            every $R$ and $\epsilon<1$, and for every
+            $\beta\in (0,1)$, the probability that $A_\eps(\dataset)$ samples a value
+            $y$ with
+            $|\textit{rank}_{\dataset}(y) -  n/2 | > c\cdot \frac {\ln(R) +
+              \ln(1/\beta)}{\eps}$ is at most $\beta$.
+            Here $rank_{\dataset}(y) \in\set{0,1,...,n}$ is the position $y$ would have in the
+            sorted order of $\dataset$.
+
+            [\emph{Hint:} How does $\textit{rank}_{\dataset}(\cdot)$
+            relate to $q(\cdot ; {\dataset})$?  Look at the ratio
+            between the
+            probability mass of a true median  and the probability mass of
+            an element with very low or high rank.]
+
+        \end{enumerate}
+
+          \item \textbf{Implementing the Median Algorithm.} Implement the report-noisy-max version of this
+            algorithm. Your code should take a set $\data$ of real
+            values as input along with parameters $R$ and $\eps$. The
+            first step should be to round all entries to the nearest
+            integer in $\{1,...,R\}$. The output should be a single
+            real number.
+
+           Test your code on data drawn from the following
+           distributions, using $\epsilon = 0.1$ and $n \in \{50,100,500, 2000, 10000\}$:
+           \begin{itemize}
+           \item Gaussian: $\cN(R/4, R^2/10)$ for $R \in
+             \set{100,1000,10000}$.
+           \item Poisson: $\textit{Poi}(50)$ for $R \in 
+             \set{100,1000,10000}$.
+           \item Bimodal: $R=1,000$; each data point uniform over two
+             values $\set{R-k, R+k}$ for $k = 10, 100, 200$.
+             \end{itemize}
+             For each setting of parameters (data distribution, $R$
+             and $n$), sample 50 data sets from the distribution, and
+             run the algorithm 10 times on each. Collect the following
+             statistics:
+             \begin{itemize}
+             \item Average error in rank: how far from $n/2$ is the
+               rank of the output?
+             \item Standard deviation of error in rank
+             \item Standard deviation of error in rank \emph{among runs on
+               the same data set.}
+           \end{itemize}
+
+         
+        
+\item \textbf{Report Noisy Max.} Prove that report noisy max with Laplace noise is differentially
+  private (Exercise 2.1 from the notes for Lecture 6).
+
+\item         \textbf{Histograms.}
+  Consider the following algorithm for releasing histograms.
+  
+  \begin{algorithm}[H]
+  	\DontPrintSemicolon
+    \caption{Stable Histogam$(\dataset; \eps,\delta)$}
+    \KwIn{$\dataset$ is a multi-set of values in $\univ$. }
+    \lFor{every $z\in\univ$ that appears in $\dataset$}
+    {
+      $\tilde c_z = \#\set{i: x_i =z} + \Lap(1/\eps)$s
+    }
+    Release the set of pairs $\set{(z, \tilde c_z) : \tilde c_z >
+      \tau}$ where $\tau = 1+ \frac{\ln(1/\delta)}{\eps}$. 
+  \end{algorithm}
+
+  \begin{enumerate}
+  \item Show that for any domain $\univ$, Algorithm 1 is
+    $(\eps,\delta)$-differentially private when neighboring data sets
+    are allowed to differ by the insertion or deletion of one value.
+
+  
+    \emph{Hint:} The delicate part of this result is that we add noise
+    only to counts of non-empty bins. (For example, if we were
+    counting how many people live on each square mile of land in
+    Alaska, most of the bins would be empty, but others would have
+    lots of people.) There are two kinds of adjacent data sets: those
+    where the set of nonempty bins changes, and those where it does
+    not.  You may need the following simple concentration bound for
+    Laplace random variables: If $Y\sim\Lap(\lambda)$, then for every
+    $t>0$, we have $\Pr( Y >\lambda t ) \leq \frac 1 2 \exp(-t)$.
+  
+
+    \item Prove that the Stable Histograms
+    algorithm is not $(\eps',0)$ differentially private for any finite
+    positive value $\eps'$. [\emph{Hint}: Give two neighboring data sets and
+    a histogram $y$ such that $y$ is  a possible output for only one of
+    the two data sets.]
+  \end{enumerate}
+
+\end{enumerate}
+
+
+\end{document}
