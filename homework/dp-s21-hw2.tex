@@ -65,9 +65,10 @@ work with anyone, you should write ``Collaborators: none."
           1 & \text{if }z>0 \,,\\
           0 &          \text{if }z=0 \,,\\
           -1 & \text{if }z<0 \,.\\
-        \end{cases}$$
-        Note that this score is 0 exactly when $y$ is a valid median
-        for $\dataset$. 
+        \end{cases}$$ If all the input values are distinct, this score
+        is 0 exactly when $y$ is a valid median for $\dataset$. In
+        general, the score will be minimized at the true median.
+
 
         \begin{enumerate}
         \item Show that $q$ has sensitivity at most 1 when
@@ -85,6 +86,10 @@ work with anyone, you should write ``Collaborators: none."
               \ln(1/\beta)}{\eps}$ is at most $\beta$.
             Here $rank_{\dataset}(y) \in\set{0,1,...,n}$ is the position $y$ would have in the
             sorted order of $\dataset$.
+
+            For this part, it is ok to
+            assume distinct data values, so that the rank of a value
+            is uniquely defined.
 
             [\emph{Hint:} How does $\textit{rank}_{\dataset}(\cdot)$
             relate to $q(\cdot ; {\dataset})$?  Look at the ratio
@@ -125,7 +130,7 @@ work with anyone, you should write ``Collaborators: none."
 
          
         
-\item \textbf{Report Noisy Max.} Prove that report noisy max with Laplace noise is differentially
+\item \textbf{Report Noisy Max.} Prove that report noisy max with Exponential noise is differentially
   private (Exercise 2.1 from the notes for Lecture 6).
 
 \item         \textbf{Histograms.}
