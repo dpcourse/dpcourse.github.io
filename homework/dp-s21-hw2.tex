@@ -140,9 +140,9 @@ work with anyone, you should write ``Collaborators: none."
   	\DontPrintSemicolon
     \caption{Stable Histogam$(\dataset; \eps,\delta)$}
     \KwIn{$\dataset$ is a multi-set of values in $\univ$. }
-    \lFor{every $z\in\univ$ that appears in $\dataset$}
+    \For{every $z\in\univ$ that appears in $\dataset$}
     {
-      $\tilde c_z = \#\set{i: x_i =z} + \Lap(1/\eps)$s
+      $\tilde c_z = \#\set{i: x_i =z} + \Lap(1/\eps)$\;
     }
     Release the set of pairs $\set{(z, \tilde c_z) : \tilde c_z >
       \tau}$ where $\tau = 1+ \frac{\ln(1/\delta)}{\eps}$. 
