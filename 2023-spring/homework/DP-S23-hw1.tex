@@ -85,7 +85,8 @@ work with anyone, you should write ``Collaborators: none."
     \item the \emph{number of edges} in the graph
     \item the \emph{number of triangles} in the graph
     \item the \emph{diameter of the graph} (this is the largest
-      possible length of the shortest path betweent two nodes)
+      possible length of the shortest path betweent two nodes; \textcolor{blue}{we define the diameter of a disconnected graph to
+      be the largest diamter of any of its connected components}). 
     \item \emph{Distance from bipartiteness}: this is the smallest
       number of nodes that must be changed for the graph to be
       bipartite.
@@ -180,14 +181,17 @@ $$ What can you say about
             Your code should take a set $\data$ of real
             values as input along with parameters $R$ and $\eps$. The
             first step should be to round all entries to the nearest
-            integer in $\{1,...,R\}$. The output should be a single
+            integer in $\{1,...,R\}$. \textcolor{blue}{(Values less than 1 should
+            be rounded up to 1; values greater than $R$ get rounded
+            down to $R$.)}
+              The output should be a single
             integer.
 
            Test your code on data drawn from the following
            distributions, using $\epsilon = 0.1$ and $n \in \{50,100,500, 2000, 10000\}$:
            \begin{itemize}
            \item Gaussian: $\cN(R/4, R^2/10)$ for $R \in
-             \set{2^7,2^{10}, 2^{16}}$.
+             \set{2^7,2^{10}, 2^{16}}$. 
            \item Poisson: $\textit{Poi}(50)$ for $R \in 
              \set{2^7,2^{10}, 2^{16}}$. (NB: The distribution does not
              change as the range increases.)
