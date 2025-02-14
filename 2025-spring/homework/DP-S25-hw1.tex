@@ -77,7 +77,7 @@ How does this theorem compare to the reconstruction attacks we've seen for $k \a
   identifier $u$, their income $a_{u} \in [0,1]$
   and their friend list $F_{u}$, which is a list of identifiers
   of other nodes. $F_{u}$ can have any size---it can be empty, or
-  consist of \emph{all} othe nodes, or anything in between. We
+  consist of \emph{all} other nodes, or anything in between. We
   assume that friendship is symmetric: if Alice is on Bob's friend
   list, then Bob is on Alice's.
 
@@ -93,9 +93,8 @@ How does this theorem compare to the reconstruction attacks we've seen for $k \a
   
   \begin{enumerate}
   \item As a function of $n$, what is the global sensitivity of each
-    of the following functions? Give the best upper bounds and lower
-    bounds that you can. (It should be possible to given an exact
-    answer, like $n^2-1$), for each of these.)
+    of the following functions? It should be possible to given an exact
+    answer, like $n^2-1$, for each of these, but it is also ok to give upper and lower bounds that differ by a constant (e.g. ``$GS_f$ is at least $\binom n 2$ and at most $n^2$'').
 
     How does the sensitivity compare to the range of the function
     (that is, the difference between the largest and smallest possible
@@ -119,8 +118,8 @@ How does this theorem compare to the reconstruction attacks we've seen for $k \a
     (We multiply the number of edges by 2 since each edge gets
     counted twice in the formula.)
     
-    This quantity ranges between 0 and 1. Design a differentially
-    private algorithm which approximates $g$ with additive error $\pm O(1/n)$
+    This quantity ranges between 0 and 1. Design an $\eps$-differentially
+    private algorithm which approximates $g$ with additive error $\pm O(1/\eps n)$
     on all graphs for which $\# (edges) \geq n^2/20$. (The constant
     20 is arbitrary. In fact, one can get vanishing relative error
     under much weaker conditions.)
