@@ -14,7 +14,7 @@ Edit the HTML directly. There is no build step, JavaScript dependency, or extern
 
 HTML and CSS use two-space indentation, configured in `.editorconfig`. Keep CSS declarations on separate lines and wrap long HTML prose where practical; keep URLs and attribute values intact. The shared stylesheet is organized by navigation, page content, instructor profiles, responsive layouts, and print styles.
 
-Identify offerings by both semester and institution in landing-page links, page titles, breadcrumbs, and offering headers. Spring 2021 was offered at Northeastern University (NU) and Boston University (BU); Spring 2023 and Spring 2025 were offered at BU. Use distinct directories for any future separate offerings in the same semester.
+Identify offerings by both semester and institution in landing-page links, page titles, and offering headers. Spring 2021 was offered at Northeastern University (NU) and Boston University (BU); Spring 2023 and Spring 2025 were offered at BU. Use distinct directories for any future separate offerings in the same semester.
 
 ## Preview
 
